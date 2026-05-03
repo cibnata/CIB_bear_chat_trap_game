@@ -163,21 +163,6 @@
       margin-bottom:4px;
     }
     .player-choice-desc{ display:none; }
-    .nickname-status {
-      color:#48658f;
-      font-weight:850;
-      font-size:.92rem;
-      line-height:1.5;
-      background:#f6faff;
-      border:1px solid #d7e7ff;
-      border-radius:14px;
-      padding:9px 11px;
-    }
-    .nickname-status.confirmed {
-      color:#166534;
-      background:#e9f8f0;
-      border-color:#8fd0a8;
-    }
     .line.role-seller-tech .bubble{
       background:#f3f2ff;
       border-color:#c6bafc;
@@ -219,20 +204,7 @@
     .pill { display:inline-flex; align-items:center; gap:6px; border-radius:999px; padding:6px 10px; font-size:.82rem; font-weight:950; background:var(--pink-soft); color:#a31644; border:1px solid #ffc1d2; }
     .pill.blue { background:#e8f1ff; color:#174fb4; border-color:#bcd6ff; }
     .pill.amber { background:var(--amber-soft); color:#8a4c00; border-color:#ffe08a; }
-    h2#sceneTitle { margin:4px 0 0; font-size: clamp(1.35rem, 2.3vw, 1.9rem); color:var(--navy); line-height:1.18; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
-    .level-badge {
-      display:inline-flex;
-      align-items:center;
-      border-radius:999px;
-      padding:5px 10px;
-      background:#e8f1ff;
-      border:1px solid #bcd6ff;
-      color:#174fb4;
-      font-size:.86rem;
-      font-weight:950;
-      line-height:1.2;
-      white-space:nowrap;
-    }
+    h2#sceneTitle { margin:4px 0 0; font-size: clamp(1.35rem, 2.3vw, 1.9rem); color:var(--navy); line-height:1.18; }
     .story { margin:0; color:#385176; font-weight:650; line-height:1.65; }
     .progress-wrap { margin:14px 0; display:grid; gap:6px; }
     .progress-bar { height:12px; background:#d9e9ff; border-radius:999px; overflow:hidden; border:1px solid #c4ddff; }
@@ -795,7 +767,6 @@
             <input id="nicknameInput" maxlength="12" placeholder="例如：小偵探、Nata、防詐隊長" />
             <button id="startGameBtn" class="primary-btn" type="button">開始遊戲</button>
           </div>
-          <div class="nickname-status" id="nicknameStatus" aria-live="polite">輸入暱稱後按 Enter 確認，再按「開始遊戲」。</div>
 
           <div class="instruction" role="note">
             <span aria-hidden="true">🎯</span>
@@ -809,13 +780,13 @@
           <span aria-hidden="true">🎯</span>
           <div><strong>遊戲說明：</strong>你會看到兩段看起來都很像真的聊天情境，把 A、B 兩邊的訊息都看完，再判斷每一段對話是真的，還是暗藏詐騙陷阱。</div>
         </div>
-          <h2 id="sceneTitle"><span id="sceneTitleText">情節標題</span><span class="level-badge" id="levelBadge">第 1 關，共 5 個關卡</span></h2>
+          <h2 id="sceneTitle">情節標題</h2>
           <p class="story" id="sceneStory">故事內容</p>
         </section>
 
         <div class="progress-wrap" aria-label="任務進度">
           <div class="progress-bar" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
-          <div class="progress-text sr-only" id="progressText">第 1 關，共 5 個關卡</div>
+          <div class="progress-text" id="progressText">第 1 個情節 / 共 5 個情節</div>
         </div>
 
         <section class="dialogue-grid" id="dialogueGrid" aria-label="對話選擇區"></section>
@@ -871,7 +842,7 @@
     "id": "fake_buyer_emotion",
     "category": "假買家騙賣家",
     "title": "二手交易：客服協助",
-    "story": "某天晚上，你在社群平台販售二手商品。留言後，很快有買家私訊表示想購買，對方語氣很積極，也不斷追問交易進度。你們開始討論交易細節……",
+    "story": "某天晚上，你在社群平台販售二手商品。留言後，很快有買家私訊表示很想購買，對方語氣很積極，也不斷追問能不能盡快完成交易。你看著訊息，開始和對方討論交易細節……",
     "realTitle": "尊重平台流程的買家",
     "fakeTitle": "交易協助對話",
     "realDialogue": [
@@ -955,7 +926,7 @@
     "id": "investment_fomo",
     "category": "假投資",
     "title": "投資群組：帶單邀約",
-    "story": "某天下午，你被朋友加入一個投資群組。群裡訊息很多，大家分享截圖、討論行情，氣氛看起來很熱絡。你決定先觀察群裡接下來怎麼說……",
+    "story": "某天下午，你被朋友加入一個投資群組。群裡訊息跳得很快，有人分享獲利截圖，也有人說老師很準。你有點好奇，決定先看看大家接下來怎麼聊……",
     "realTitle": "有風險揭露的投資討論",
     "fakeTitle": "情緒帶單的假投資群",
     "realDialogue": [
@@ -1039,7 +1010,7 @@
     "id": "romance_money",
     "category": "假交友／戀愛詐財",
     "title": "交友聊天：情感互動",
-    "story": "某天晚上，你和交友軟體認識的網友聊得很開心。對方每天關心你，讓你覺得彼此好像越來越熟。你們繼續聊下去……",
+    "story": "某天晚上，你和交友軟體認識的網友聊得很開心。對方每天都主動關心你，也常說你很特別。你覺得彼此好像越來越熟，於是繼續聊了下去……",
     "realTitle": "尊重界線的網友",
     "fakeTitle": "快速升溫的情感詐騙",
     "realDialogue": [
@@ -1123,7 +1094,7 @@
     "id": "fake_police_fear",
     "category": "假檢警",
     "title": "案件通知：來電查證",
-    "story": "某一天下午有陌生電話打來，對方聲稱是警察，表示你涉及刑事案件，要求你配合。你感到很緊張，追問發生什麼事情……",
+    "story": "某一天下午，陌生電話突然打來。對方聲稱自己是警察，表示你涉及刑事案件，要求你立刻配合說明。你感到很緊張，追問到底發生什麼事情……",
     "realTitle": "可自行查證的正式通知",
     "fakeTitle": "來電查證對話",
     "realDialogue": [
@@ -1207,7 +1178,7 @@
     "id": "online_shopping_greed",
     "category": "網購詐騙",
     "title": "網購促銷：客服聯繫",
-    "story": "某天你滑到熱門商品限時特價廣告，價格低到讓人心動。你留言詢問後，很快收到客服私訊回覆，便開始確認購買細節……",
+    "story": "某天你滑到熱門商品限時特價廣告，價格低到讓人心動。你留言詢問後，很快收到客服私訊回覆。你擔心優惠錯過，便開始確認購買細節……",
     "realTitle": "官網下單與正常退換貨",
     "fakeTitle": "超低價私下匯款",
     "realDialogue": [
@@ -1291,7 +1262,7 @@
     "id": "ticket_anxiety",
     "category": "票券詐騙",
     "title": "演唱會門票：轉讓流程",
-    "story": "某天晚上，你最想看的演唱會門票已經完售。你在社群留言求票後，有人私訊表示手上剛好有票可以轉讓。你們開始討論轉讓細節……",
+    "story": "某天晚上，你最想看的演唱會門票已經完售。你在社群留言求票後，有人私訊表示手上剛好有票可以轉讓。你既期待又擔心，開始和對方確認轉讓細節……",
     "realTitle": "官方票券系統轉讓",
     "fakeTitle": "截圖假票與先匯款",
     "realDialogue": [
@@ -1375,7 +1346,7 @@
     "id": "parcel_panic",
     "category": "物流包裹詐騙",
     "title": "包裹通知：物流聯繫",
-    "story": "某天你收到一則包裹通知，內容提到配送資料異常。你剛好最近有網購，於是點開訊息想確認狀況，並詢問包裹出了什麼問題……",
+    "story": "某天你收到一則包裹通知，內容提到配送資料異常。你剛好最近有網購，擔心包裹會不會被退回，便點開訊息想確認狀況……",
     "realTitle": "官方網站查件",
     "fakeTitle": "重新配送釣魚連結",
     "realDialogue": [
@@ -1459,7 +1430,7 @@
     "id": "government_subsidy_hope",
     "category": "政府補助／普發現金詐騙",
     "title": "補助申請：通知查證",
-    "story": "某天你看到一則補助申請訊息，內容提到符合資格者可以線上登記。你最近剛好需要資金，便想進一步了解申請流程……",
+    "story": "某天你看到一則補助申請訊息，內容提到符合資格者可以線上登記。你最近剛好需要資金，看到訊息後有點心動，便想進一步了解申請流程……",
     "realTitle": "官方網站查詢申請資格",
     "fakeTitle": "補助保證金與帳密",
     "realDialogue": [
@@ -1543,7 +1514,7 @@
     "id": "job_scam_pressure",
     "category": "求職詐騙",
     "title": "兼職求職：工作邀約",
-    "story": "某天你正在找兼職工作，收到一則高薪工作邀約。對方說工作簡單、時間彈性，並很快開始說明上工流程。你接著詢問工作內容與上工方式……",
+    "story": "某天你正在找兼職工作，收到一則高薪工作邀約。對方說工作簡單、時間彈性，而且很快就能開始。你想知道是不是適合自己，於是詢問工作內容與上工方式……",
     "realTitle": "兼職招募對話",
     "fakeTitle": "求職邀約對話",
     "realDialogue": [
@@ -1793,7 +1764,7 @@
     "id": "game_topup",
     "category": "遊戲點數／虛擬寶物詐騙",
     "title": "遊戲點數：代儲交易",
-    "story": "某天你想幫遊戲帳號儲值，在社群看到代儲優惠訊息。對方回覆很快，並表示現在還有折扣名額。你開始詢問代儲的交易方式……",
+    "story": "某天你想幫遊戲帳號儲值，在社群看到代儲優惠訊息。對方回覆很快，並表示現在還有折扣名額。你想省一點錢，便開始詢問代儲的交易方式……",
     "realTitle": "官方平台交易",
     "fakeTitle": "低價代儲與解鎖費",
     "realDialogue": [
@@ -1879,7 +1850,7 @@
             {
                   "realTitle": "平台交易流程對話",
                   "fakeTitle": "交易協助對話",
-                  "story": "某天晚上，你在社群賣二手相機。買家看起來很有誠意，也一直確認能不能盡快完成交易。你們開始討論交易細節……",
+                  "story": "某天晚上，你在社群賣二手相機。買家看起來很有誠意，也一直確認能不能盡快完成交易。你開始和對方討論交易細節……",
                   "realDialogue": [
                         [
                               "買家",
@@ -1936,7 +1907,7 @@
             {
                   "realTitle": "平台交易流程對話",
                   "fakeTitle": "交易協助對話",
-                  "story": "某天你出售二手平板，對方很積極詢問細節，並開始討論付款與交貨方式。你們繼續確認交易流程……",
+                  "story": "某天你出售二手平板，對方很積極詢問商品狀況，也開始討論付款與交貨方式。你繼續確認接下來怎麼交易……",
                   "realDialogue": [
                         [
                               "買家",
@@ -2227,7 +2198,7 @@
             {
                   "realTitle": "正式通知對話",
                   "fakeTitle": "來電查證對話",
-                  "story": "某一天下午有陌生電話打來，對方聲稱是警察，表示你涉及刑事案件，要求你配合。你感到很緊張，追問發生什麼事情……",
+                  "story": "某一天下午，陌生電話突然打來。對方聲稱自己是警察，表示你涉及刑事案件，要求你立刻配合說明。你感到很緊張，追問到底發生什麼事情……",
                   "realDialogue": [
                         [
                               "派出所員警",
@@ -2343,7 +2314,7 @@
             {
                   "realTitle": "下單流程對話",
                   "fakeTitle": "促銷詢問對話",
-                  "story": "某天你看到熱門商品限時特價廣告，客服很快回覆，並告訴你目前還有少量名額。你開始確認購買細節……",
+                  "story": "某天你看到熱門商品限時特價廣告，客服很快回覆，並告訴你目前還有少量名額。你擔心錯過優惠，開始確認購買細節……",
                   "realDialogue": [
                         [
                               "品牌客服",
@@ -2402,7 +2373,7 @@
             {
                   "realTitle": "轉讓流程對話",
                   "fakeTitle": "購票協調對話",
-                  "story": "某天晚上，你想買完售演唱會門票，在社群詢問後，有賣家私訊說手上剛好有票。你們開始討論轉讓方式……",
+                  "story": "某天晚上，你想買完售演唱會門票，在社群詢問後，有賣家私訊說手上剛好有票。你既期待又緊張，開始討論轉讓方式……",
                   "realDialogue": [
                         [
                               "賣家",
@@ -2461,7 +2432,7 @@
             {
                   "realTitle": "物流查詢對話",
                   "fakeTitle": "配送通知對話",
-                  "story": "某天你收到包裹異常通知，對方說配送資料需要確認，你擔心包裹會不會被退回，便開始詢問狀況……",
+                  "story": "某天你收到包裹異常通知，對方說配送資料需要確認。你擔心包裹會不會被退回，便開始詢問狀況……",
                   "realDialogue": [
                         [
                               "物流通知",
@@ -2638,7 +2609,7 @@
             {
                   "realTitle": "貸款說明對話",
                   "fakeTitle": "核貸通知對話",
-                  "story": "某天你急需資金申請貸款，專員說可以協助你處理資料。你想盡快完成審核，便開始詢問下一步……",
+                  "story": "某天你剛好需要一筆小額資金周轉，心裡有點著急，又不好意思向身邊的人開口。這時有貸款專員表示可以協助你處理，你開始詢問下一步……",
                   "realDialogue": [
                         [
                               "貸款專員",
@@ -2697,7 +2668,7 @@
             {
                   "realTitle": "活動資訊對話",
                   "fakeTitle": "廣告詢問對話",
-                  "story": "你在社群看到知名品牌抽獎廣告，留言後收到私訊。對方說你可能符合領獎資格，請你依照指示確認資訊。你開始詢問領獎流程……",
+                  "story": "你在社群看到知名品牌抽獎廣告，留言後收到私訊。對方說你可能符合領獎資格，請你依照指示確認資訊。你有點驚喜，也開始詢問領獎流程……",
                   "realDialogue": [
                         [
                               "品牌客服",
@@ -2756,7 +2727,7 @@
             {
                   "realTitle": "正常代儲說明",
                   "fakeTitle": "低價代儲交易",
-                  "story": "某天你想買便宜遊戲點數，代儲商回覆很快，並說目前還能幫你安排。你開始詢問代儲的交易方式……",
+                  "story": "某天你想買便宜遊戲點數，代儲商回覆很快，並說目前還能幫你安排。你想確認是否划算，便開始詢問交易方式……",
                   "realDialogue": [
                         [
                               "賣家",
@@ -2822,7 +2793,6 @@
     let lives = 3;
     let answered = false;
     let playerNickname = "玩家";
-    let nicknameConfirmed = false;
 
     const els = {
       statusRound: document.getElementById("statusRound"),
@@ -2830,8 +2800,6 @@
       statusLives: document.getElementById("statusLives"),
       categoryPill: document.getElementById("categoryPill"),
       sceneTitle: document.getElementById("sceneTitle"),
-      sceneTitleText: document.getElementById("sceneTitleText"),
-      levelBadge: document.getElementById("levelBadge"),
       sceneStory: document.getElementById("sceneStory"),
       progressFill: document.getElementById("progressFill"),
       progressText: document.getElementById("progressText"),
@@ -2855,7 +2823,6 @@
       startCard: document.getElementById("startCard"),
       playArea: document.getElementById("playArea"),
       nicknameInput: document.getElementById("nicknameInput"),
-      nicknameStatus: document.getElementById("nicknameStatus"),
       startGameBtn: document.getElementById("startGameBtn"),
       avatarOptions: document.getElementById("avatarOptions"),
       selectedAvatarLabel: document.getElementById("selectedAvatarLabel")
@@ -3221,11 +3188,10 @@
       els.summary.classList.remove("show");
       els.feedback.classList.remove("show");
       if (els.categoryPill) els.categoryPill.textContent = round.category;
-      els.sceneTitleText.textContent = round.title;
+      els.sceneTitle.textContent = round.title;
       els.sceneStory.textContent = round.story;
       els.progressFill.style.width = `${(current / TOTAL_ROUNDS) * 100}%`;
       els.progressText.textContent = `第 ${current + 1} 關，共 ${TOTAL_ROUNDS} 個關卡`;
-      els.levelBadge.textContent = `第 ${current + 1} 關，共 ${TOTAL_ROUNDS} 個關卡`;
       updateStatus();
       renderChoiceCards();
     }
@@ -3276,10 +3242,11 @@
         btn.addEventListener("click", (e) => {
           e.stopPropagation();
           const key = btn.dataset.next;
+          const previousTop = btn.getBoundingClientRect().top;
           const choice = round.choices.find(c => c.key === key);
           revealState[key] = Math.min(choice.dialogue.length, (revealState[key] || 1) + 1);
           renderChoiceCards();
-          keepContinueButtonVisible(key);
+          keepContinueButtonAtSameViewportPosition(key, previousTop);
         });
       });
 
@@ -3295,11 +3262,20 @@
       }
     }
 
-    function keepContinueButtonVisible(key) {
+    function keepContinueButtonAtSameViewportPosition(key, previousTop) {
       requestAnimationFrame(() => {
         const btn = document.querySelector(`[data-next="${key}"]`);
         if (btn) {
-          btn.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+          const newTop = btn.getBoundingClientRect().top;
+          const diff = newTop - previousTop;
+          window.scrollBy({ top: diff, left: 0, behavior: "instant" });
+          return;
+        }
+
+        const card = document.querySelector(`.dialogue-card[data-key="${key}"]`);
+        const actions = card?.querySelector(".dialogue-actions");
+        if (actions) {
+          actions.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
         }
       });
     }
@@ -3425,16 +3401,6 @@
         : `<li>尚無成績，完成後可以儲存在本機排行榜。</li>`;
     }
 
-    function confirmNickname() {
-      const nick = (els.nicknameInput.value || "").trim().slice(0, 12);
-      playerNickname = nick || "玩家";
-      nicknameConfirmed = true;
-      if (els.nicknameStatus) {
-        els.nicknameStatus.textContent = `已確認暱稱：${playerNickname}。現在可以按「開始遊戲」。`;
-        els.nicknameStatus.classList.add("confirmed");
-      }
-    }
-
     function resetGame(randomize = true) {
       current = 0;
       score = 0;
@@ -3451,9 +3417,8 @@
     }
 
     function startGame() {
-      if (!nicknameConfirmed) {
-        confirmNickname();
-      }
+      const nick = (els.nicknameInput.value || "").trim().slice(0, 12);
+      playerNickname = nick || "玩家";
       syncPlayerChoice();
       els.startCard.style.display = "none";
       els.playArea.classList.remove("is-locked");
@@ -3463,19 +3428,7 @@
 
     els.startGameBtn.addEventListener("click", startGame);
     els.nicknameInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        confirmNickname();
-        els.startGameBtn.focus();
-      }
-    });
-
-    els.nicknameInput.addEventListener("input", () => {
-      nicknameConfirmed = false;
-      if (els.nicknameStatus) {
-        els.nicknameStatus.textContent = "輸入暱稱後按 Enter 確認，再按「開始遊戲」。";
-        els.nicknameStatus.classList.remove("confirmed");
-      }
+      if (e.key === "Enter") startGame();
     });
 
     els.nextBtn.addEventListener("click", nextRound);
