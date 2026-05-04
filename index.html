@@ -55,8 +55,29 @@
     }
     .game-header::after { content:""; position:absolute; inset:0; background: radial-gradient(circle at 86% 14%, rgba(255,255,255,.24), transparent 8rem); pointer-events:none; }
     .brand { display:flex; align-items:center; gap:12px; min-width:0; position:relative; z-index:1; }
-    .logo { width:clamp(50px, 5.6vw, 66px); aspect-ratio:1; border-radius:999px; display:grid; place-items:center; background:rgba(255,255,255,.12); padding:2px; box-shadow:0 8px 18px rgba(0,0,0,.22); }
-    .logo img { width:100%; height:100%; object-fit:contain; display:block; }
+    .logo {
+      width:clamp(64px, 7.2vw, 88px);
+      aspect-ratio:1;
+      border-radius:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:visible;
+      background:transparent;
+      padding:0;
+      box-shadow:none;
+      flex:0 0 auto;
+    }
+    .logo img {
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center center;
+      display:block;
+      margin:auto;
+      transform:scale(1.08);
+      transform-origin:center center;
+    }
     .title h1 { margin:0; font-size: clamp(1.25rem, 3.1vw, 2.25rem); line-height:1.1; letter-spacing:-.03em; }
     .title p { margin:.35rem 0 0; font-weight:800; color:rgba(255,255,255,.88); font-size:clamp(.86rem, 1.4vw, 1rem); }
     .status { display:grid; grid-template-columns: repeat(3, minmax(84px, 1fr)); gap:8px; position:relative; z-index:1; }
